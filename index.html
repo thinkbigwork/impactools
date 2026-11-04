@@ -1,0 +1,879 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Impactools SRL: fabricante argentino de llaves de golpe, bocallaves de alto impacto y herramientas antichispa para la industria petrolera.">
+<title>Impactools · Herramientas de golpe e impacto para Oil &amp; Gas</title>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: pliego técnico — bandas a todo el ancho, columna de 1200px, reglas gruesas y cotas en mono como en un plano de taller */
+:root{
+  --bg:#ECEEF0; --surface:#FFFFFF; --surface-2:#F5F6F7; --ink:#14181B; --muted:#56616A; --line:#C7CDD2; --line-strong:#14181B;
+  --accent:#F25C05; --accent-ink:#B84200; --on-accent:#14181B;
+  --hero-bg:#15191C; --hero-surface:#1E2327; --hero-ink:#F1F3F4; --hero-muted:#9BA5AC; --hero-line:#323A40;
+  --good:#1F7A4D; --warn:#A86A00;
+  --f-display:"Archivo","Arial Black","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Barlow","Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --s-1:.25rem; --s-2:.5rem; --s-3:.75rem; --s-4:1rem; --s-5:1.5rem; --s-6:2rem; --s-7:3rem; --s-8:4.5rem;
+  --t-xs:.75rem; --t-sm:.875rem; --t-md:1rem; --t-lg:1.25rem; --t-xl:1.75rem; --t-2xl:2.5rem; --t-3xl:clamp(2.2rem,5vw,3.6rem);
+  --r:4px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#101315; --surface:#181C1F; --surface-2:#1D2226; --ink:#E8EBED; --muted:#98A2A9; --line:#2E353A; --line-strong:#E8EBED;
+  --accent:#FF6A13; --accent-ink:#FF8A45; --on-accent:#111416;
+  --hero-bg:#0B0E10; --hero-surface:#151A1D; --hero-ink:#F1F3F4; --hero-muted:#98A2A9; --hero-line:#2A3237;
+  --good:#4FBF86; --warn:#E0A53A; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#101315; --surface:#181C1F; --surface-2:#1D2226; --ink:#E8EBED; --muted:#98A2A9; --line:#2E353A; --line-strong:#E8EBED;
+  --accent:#FF6A13; --accent-ink:#FF8A45; --on-accent:#111416;
+  --hero-bg:#0B0E10; --hero-surface:#151A1D; --hero-ink:#F1F3F4; --hero-muted:#98A2A9; --hero-line:#2A3237;
+  --good:#4FBF86; --warn:#E0A53A; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:var(--t-md);line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--hero-bg)}
+h1,h2,h3{font-family:var(--f-display);font-stretch:112%;line-height:1.05;margin:0;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band{padding-block:var(--s-8)}
+.eyebrow{font-family:var(--f-mono);font-size:var(--t-xs);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.btn{display:inline-flex;align-items:center;gap:.5rem;border:2px solid var(--line-strong);background:transparent;padding:.6rem 1rem;border-radius:var(--r);font-weight:700;cursor:pointer;text-decoration:none;letter-spacing:.01em}
+.btn:hover{background:var(--surface-2)}
+.btn-accent{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn-accent:hover{background:var(--accent);filter:brightness(1.07)}
+.btn-sm{padding:.35rem .65rem;font-size:var(--t-sm);border-width:1.5px}
+.sec-head{display:grid;gap:var(--s-3);margin-bottom:var(--s-6);max-width:62ch}
+.sec-head h2{font-size:var(--t-2xl);font-weight:850}
+.sec-head p{color:var(--muted);font-size:var(--t-lg)}
+.rule{border-top:4px solid var(--line-strong)}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--hero-bg);color:var(--hero-ink);border-bottom:1px solid var(--hero-line)}
+.top .wrap{display:flex;align-items:center;gap:var(--s-5);height:64px}
+.wordmark{font-family:var(--f-display);font-weight:900;font-stretch:125%;font-size:1.35rem;letter-spacing:.06em;text-decoration:none;display:flex;align-items:center;gap:.55rem;white-space:nowrap}
+.wordmark i{display:block;width:12px;height:22px;background:var(--accent);transform:skewX(-14deg)}
+.nav{display:flex;gap:var(--s-5);margin-left:auto;font-weight:600;font-size:var(--t-sm)}
+.nav a{text-decoration:none;color:var(--hero-muted)}
+.nav a:hover{color:var(--hero-ink)}
+.quote-btn{border-color:var(--accent);color:var(--hero-ink);background:transparent}
+.quote-btn:hover{background:var(--hero-surface)}
+.quote-btn .count{background:var(--accent);color:var(--on-accent);border-radius:999px;min-width:1.5em;padding:0 .4em;font-family:var(--f-mono);font-size:var(--t-xs);text-align:center}
+@media (max-width:860px){.nav{display:none}.top .wrap{justify-content:space-between}}
+
+/* Hero */
+.hero{background:var(--hero-bg);color:var(--hero-ink);padding-block:var(--s-7) var(--s-8);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:10px;background:repeating-linear-gradient(-45deg,var(--accent) 0 18px,var(--hero-bg) 18px 36px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:var(--s-7);align-items:start}
+@media (max-width:980px){.hero-grid{grid-template-columns:minmax(0,1fr)}}
+.hero .eyebrow{color:var(--hero-muted)}
+.hero h1{font-size:var(--t-3xl);font-weight:900;margin-block:var(--s-4) var(--s-5)}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{color:var(--hero-muted);font-size:var(--t-lg);max-width:46ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:var(--s-3);margin-top:var(--s-6)}
+.hero .btn{border-color:var(--hero-ink);color:var(--hero-ink)}
+.hero .btn:hover{background:var(--hero-surface)}
+.hero .btn-accent{border-color:var(--accent);color:var(--on-accent);background:var(--accent)}
+.specs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:var(--s-7);border-top:1px solid var(--hero-line)}
+.specs div{padding:var(--s-4) var(--s-3) 0 0;display:grid;gap:.15rem}
+.specs b{font-family:var(--f-mono);font-size:var(--t-lg);font-weight:600;color:var(--hero-ink)}
+.specs span{font-size:var(--t-sm);color:var(--hero-muted)}
+@media (max-width:520px){.specs{grid-template-columns:minmax(0,1fr)}}
+
+/* Advisor console */
+.console{background:var(--hero-surface);border:1px solid var(--hero-line);border-radius:6px;display:flex;flex-direction:column;min-height:540px;max-height:640px}
+.console-head{display:flex;align-items:center;gap:var(--s-3);padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--hero-line)}
+.console-head strong{font-family:var(--f-display);font-stretch:118%;font-weight:800;letter-spacing:.02em}
+.console-head .status{margin-left:auto;font-family:var(--f-mono);font-size:var(--t-xs);color:var(--hero-muted);display:flex;align-items:center;gap:.4rem}
+.console-head .dot{width:8px;height:8px;border-radius:50%;background:var(--good)}
+.msgs{flex:1;overflow-y:auto;padding:var(--s-4);display:flex;flex-direction:column;gap:var(--s-4)}
+.msg{max-width:92%;display:grid;gap:var(--s-2)}
+.msg .bubble{padding:var(--s-3) var(--s-4);border-radius:6px;font-size:.97rem;white-space:pre-wrap;overflow-wrap:anywhere}
+.msg.user{align-self:flex-end}
+.msg.user .bubble{background:var(--accent);color:var(--on-accent);font-weight:600}
+.msg.bot .bubble{background:transparent;border:1px solid var(--hero-line);color:var(--hero-ink)}
+.msg .tag{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--hero-muted)}
+.cards{display:grid;gap:var(--s-2)}
+.pcard{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s-2) var(--s-3);align-items:center;border:1px solid var(--hero-line);border-left:4px solid var(--accent);padding:var(--s-2) var(--s-3);border-radius:4px;background:var(--hero-bg)}
+.pcard .nm{font-weight:600;color:var(--hero-ink);font-size:var(--t-sm)}
+.pcard .meta{font-family:var(--f-mono);font-size:.72rem;color:var(--hero-muted)}
+.pcard .btn{border-color:var(--hero-line);color:var(--hero-ink);background:transparent}
+.pcard .btn:hover{border-color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:var(--s-2);padding:0 var(--s-4) var(--s-3)}
+.chip{border:1px solid var(--hero-line);background:transparent;color:var(--hero-muted);padding:.3rem .65rem;border-radius:999px;font-size:var(--t-sm);cursor:pointer}
+.chip:hover{color:var(--hero-ink);border-color:var(--accent)}
+.composer{display:flex;gap:var(--s-2);padding:var(--s-3);border-top:1px solid var(--hero-line)}
+.composer input{flex:1;min-width:0;background:var(--hero-bg);border:1px solid var(--hero-line);color:var(--hero-ink);border-radius:4px;padding:.65rem .8rem}
+.composer input::placeholder{color:var(--hero-muted)}
+.composer .btn{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}
+.thinking{color:var(--hero-muted);font-family:var(--f-mono);font-size:var(--t-sm)}
+
+/* Service strip */
+.service{background:var(--surface);border-bottom:1px solid var(--line)}
+.svc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.svc{padding:var(--s-6) var(--s-5) var(--s-6) 0;display:grid;gap:var(--s-2);align-content:start}
+.svc + .svc{padding-left:var(--s-5);border-left:1px solid var(--line)}
+.svc h3{font-size:var(--t-lg);font-weight:800}
+.svc p{color:var(--muted);font-size:var(--t-sm)}
+.svc .k{font-family:var(--f-mono);font-size:var(--t-xs);color:var(--accent-ink);letter-spacing:.08em;text-transform:uppercase}
+@media (max-width:900px){.svc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.svc:nth-child(3){padding-left:0;border-left:0}.svc{border-top:1px solid var(--line)}}
+@media (max-width:520px){.svc-grid{grid-template-columns:minmax(0,1fr)}.svc,.svc + .svc{padding-left:0;border-left:0}}
+
+/* Catalog */
+.cat-tools{display:grid;grid-template-columns:minmax(0,2fr) repeat(4,minmax(0,1fr));gap:var(--s-3);align-items:end;padding:var(--s-4);background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--line-strong)}
+.field{display:grid;gap:.3rem;min-width:0}
+.field label{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.field input,.field select,.field textarea{width:100%;min-width:0;background:var(--surface-2);border:1px solid var(--line);border-radius:4px;padding:.6rem .7rem}
+@media (max-width:900px){.cat-tools{grid-template-columns:repeat(2,minmax(0,1fr))}.cat-tools .field:first-child{grid-column:1/-1}}
+.cat-meta{display:flex;justify-content:space-between;align-items:center;gap:var(--s-3);flex-wrap:wrap;padding:var(--s-3) 0;color:var(--muted);font-size:var(--t-sm)}
+.famchips{display:flex;gap:var(--s-2);flex-wrap:wrap}
+.famchip{border:1.5px solid var(--line);background:var(--surface);padding:.3rem .7rem;border-radius:999px;font-size:var(--t-sm);font-weight:600;cursor:pointer}
+.famchip[aria-pressed="true"]{border-color:var(--line-strong);background:var(--line-strong);color:var(--bg)}
+.table-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line)}
+table.cat{width:100%;border-collapse:collapse;font-size:var(--t-sm)}
+.cat th{text-align:left;font-family:var(--f-mono);font-weight:500;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:.65rem .8rem;border-bottom:2px solid var(--line-strong);white-space:nowrap}
+.cat td{padding:.6rem .8rem;border-bottom:1px solid var(--line);vertical-align:middle}
+.cat tr:hover td{background:var(--surface-2)}
+.cat td.code{font-family:var(--f-mono);font-size:.78rem;white-space:nowrap;color:var(--muted)}
+.cat td.size{font-family:var(--f-mono);font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.badge{display:inline-block;font-family:var(--f-mono);font-size:.68rem;padding:.12rem .45rem;border-radius:3px;border:1px solid var(--line);white-space:nowrap}
+.badge.ns{border-color:var(--accent);color:var(--accent-ink)}
+.more{display:flex;justify-content:center;padding:var(--s-4)}
+@media (max-width:640px){
+  table.cat thead{display:none}
+  table.cat,table.cat tbody,table.cat tr,table.cat td{display:block;width:100%}
+  table.cat tr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.15rem .6rem;padding:.7rem .8rem;border-bottom:1px solid var(--line)}
+  table.cat td{border:0;padding:0}
+  table.cat td.nm{grid-column:1}
+  table.cat td.size{grid-column:2;grid-row:1;text-align:right}
+  table.cat td.drive,table.cat td.norma{display:none}
+  table.cat td.act{grid-column:2;grid-row:2 / span 2;align-self:center}
+}
+
+/* Flange tool */
+.tool{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:var(--s-6);background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--line-strong);padding:var(--s-6)}
+@media (max-width:860px){.tool{grid-template-columns:minmax(0,1fr);padding:var(--s-4)}}
+.tool-form{display:grid;gap:var(--s-4);align-content:start}
+.seg{display:flex;flex-wrap:wrap;gap:.35rem}
+.seg button{border:1.5px solid var(--line);background:var(--surface-2);padding:.4rem .7rem;border-radius:4px;font-family:var(--f-mono);font-size:var(--t-sm);cursor:pointer}
+.seg button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent);color:var(--on-accent);font-weight:600}
+.tool-out{display:grid;gap:var(--s-4);align-content:start;min-width:0}
+.readout{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line)}
+.readout div{padding:var(--s-3);display:grid;gap:.2rem}
+.readout div + div{border-left:1px solid var(--line)}
+.readout span{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.readout b{font-family:var(--f-mono);font-size:var(--t-xl);font-weight:600;font-variant-numeric:tabular-nums}
+.readout small{color:var(--muted);font-family:var(--f-mono)}
+@media (max-width:520px){.readout{grid-template-columns:minmax(0,1fr)}.readout div + div{border-left:0;border-top:1px solid var(--line)}}
+.drawing{width:100%;max-width:100%;height:auto;display:block;background:var(--surface-2);border:1px solid var(--line)}
+.note{font-size:var(--t-sm);color:var(--muted)}
+.listrow{display:flex;justify-content:space-between;align-items:center;gap:var(--s-3);padding:.55rem 0;border-bottom:1px solid var(--line);font-size:var(--t-sm)}
+.listrow .mono{color:var(--muted);font-size:.75rem}
+
+/* Antichispa */
+.ns-band{background:var(--surface);border-block:1px solid var(--line)}
+.ns-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:var(--s-7);align-items:start}
+@media (max-width:900px){.ns-grid{grid-template-columns:minmax(0,1fr)}}
+.groups{width:100%;border-collapse:collapse;font-size:var(--t-sm)}
+.groups th,.groups td{padding:.6rem .7rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.groups th{font-family:var(--f-mono);font-weight:500;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--line-strong)}
+.yes{color:var(--good);font-weight:700}
+.no{color:var(--muted)}
+.callout{border-left:4px solid var(--accent);padding:var(--s-3) var(--s-4);background:var(--surface-2);font-size:var(--t-sm)}
+
+/* Process */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-5);counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{display:grid;gap:var(--s-2);align-content:start;padding-top:var(--s-4);border-top:4px solid var(--line-strong)}
+.steps li::before{counter-increment:s;content:"0" counter(s);font-family:var(--f-mono);font-weight:600;color:var(--accent-ink)}
+.steps h3{font-size:var(--t-lg);font-weight:800}
+.steps p{color:var(--muted);font-size:var(--t-sm)}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.steps{grid-template-columns:minmax(0,1fr)}}
+
+/* Distributors */
+.dist-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:var(--s-6);align-items:start}
+@media (max-width:900px){.dist-grid{grid-template-columns:minmax(0,1fr)}}
+.dist-list{display:grid;gap:0;border-top:4px solid var(--line-strong)}
+.dist{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.2rem var(--s-4);padding:var(--s-4) 0;border-bottom:1px solid var(--line)}
+.dist h3{font-size:var(--t-lg);font-weight:800;font-stretch:105%}
+.dist p{color:var(--muted);font-size:var(--t-sm)}
+.dist .zone{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink)}
+.dist a{align-self:center;font-size:var(--t-sm);font-weight:600}
+.dist.hl{background:var(--surface);box-shadow:inset 4px 0 0 var(--accent);padding-left:var(--s-4)}
+.locate{background:var(--surface);border:1px solid var(--line);padding:var(--s-5);display:grid;gap:var(--s-3)}
+
+/* Special */
+.special{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:var(--s-6)}
+@media (max-width:900px){.special{grid-template-columns:minmax(0,1fr)}}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s-3);background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--line-strong);padding:var(--s-5)}
+.form-grid .full{grid-column:1/-1}
+@media (max-width:520px){.form-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Footer */
+footer{background:var(--hero-bg);color:var(--hero-ink);padding-block:var(--s-7)}
+.foot{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(2,minmax(0,1fr));gap:var(--s-6)}
+@media (max-width:760px){.foot{grid-template-columns:minmax(0,1fr)}}
+footer p,footer li{color:var(--hero-muted);font-size:var(--t-sm)}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:.4rem}
+footer .sel{user-select:all;color:var(--hero-ink);font-family:var(--f-mono)}
+
+/* Quote drawer */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--surface);border-left:4px solid var(--line-strong);z-index:50;display:flex;flex-direction:column;transform:translateX(105%);transition:transform .25s ease;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px)}
+.drawer.open{transform:none}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:var(--s-4);border-bottom:1px solid var(--line)}
+.drawer-head h2{font-size:var(--t-xl);font-weight:850}
+.drawer-body{flex:1;overflow-y:auto;padding:var(--s-4);display:grid;gap:var(--s-4);align-content:start}
+.qitem{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:var(--s-2);align-items:center;padding-bottom:var(--s-3);border-bottom:1px solid var(--line)}
+.qitem .nm{font-weight:600;font-size:var(--t-sm)}
+.qitem .mono{font-size:.72rem;color:var(--muted)}
+.qitem input{width:4.2rem;background:var(--surface-2);border:1px solid var(--line);border-radius:4px;padding:.35rem .4rem;text-align:right;font-family:var(--f-mono)}
+.x{border:0;background:transparent;cursor:pointer;color:var(--muted);font-size:1.2rem;line-height:1;padding:.2rem .4rem}
+.scrim{position:fixed;inset:0;background:rgba(10,12,14,.45);z-index:45}
+.empty{color:var(--muted);font-size:var(--t-sm);border:1px dashed var(--line);padding:var(--s-4)}
+pre.qtext{white-space:pre-wrap;font-family:var(--f-mono);font-size:.75rem;background:var(--surface-2);border:1px solid var(--line);padding:var(--s-3);margin:0;max-height:220px;overflow:auto;user-select:all}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--line-strong);color:var(--bg);padding:.6rem 1rem;border-radius:4px;font-weight:600;font-size:var(--t-sm);z-index:60}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="wordmark" href="#inicio" aria-label="Impactools, inicio"><i aria-hidden="true"></i>IMPACTOOLS</a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#bridas">Llave por brida</a>
+      <a href="#antichispa">Antichispa</a>
+      <a href="#servicio">Servicio</a>
+      <a href="#distribuidores">Distribuidores</a>
+    </nav>
+    <button class="btn btn-sm quote-btn" id="openQuote" type="button">Cotización <span class="count" id="qCount">0</span></button>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Fabricante · Avellaneda, Buenos Aires</p>
+      <h1>Llaves de golpe y bocallaves de impacto <em>para el pozo</em>.</h1>
+      <p class="lead">Fabricamos en Argentina, en acero aleado templado y en aleaciones antichispa, para servicios petroleros, plantas y terminales. Decinos qué tuerca tenés que mover y te decimos con qué.</p>
+      <div class="hero-actions">
+        <a class="btn btn-accent" href="#catalogo">Buscar en el catálogo</a>
+        <a class="btn" href="#bridas">Calcular llave por brida</a>
+      </div>
+      <div class="specs">
+        <div><b>1/2" – 2-1/2"</b><span>Encastres de bocallave de impacto</span></div>
+        <div><b>Acero · Al-Br · Cu-Be</b><span>Aceros especiales y aleaciones antichispa</span></div>
+        <div><b>Garantía de por vida</b><span>Contra defectos de fabricación</span></div>
+      </div>
+    </div>
+
+    <div class="console" aria-label="Roger, asistente técnico">
+      <div class="console-head">
+        <strong>ROGER</strong>
+        <span class="eyebrow" style="color:var(--hero-muted)">Asistente técnico</span>
+        <span class="status"><span class="dot" id="advDot"></span><span id="advMode">Conectando…</span></span>
+      </div>
+      <div class="msgs" id="msgs" aria-live="polite"></div>
+      <div class="chips" id="chips">
+        <button class="chip" type="button">Llave de golpe para brida 6" clase 900</button>
+        <button class="chip" type="button">Bocallave 46 mm encastre 1"</button>
+        <button class="chip" type="button">¿Qué antichispa uso con H₂S?</button>
+        <button class="chip" type="button">Distribuidor en Añelo</button>
+      </div>
+      <form class="composer" id="composer">
+        <label for="advInput" class="eyebrow" style="position:absolute;left:-9999px">Escribí tu consulta</label>
+        <input id="advInput" autocomplete="off" placeholder="Medida, brida, material o ubicación…">
+        <button class="btn btn-sm" id="advSend" type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="service" id="servicio">
+  <div class="wrap svc-grid">
+    <div class="svc"><span class="k">Fábrica propia</span><h3>Hecho en Avellaneda</h3><p>Forja, mecanizado y tratamiento térmico en planta. Sin flete internacional ni aduana entre vos y la herramienta.</p></div>
+    <div class="svc"><span class="k">Respaldo</span><h3>Garantía de por vida</h3><p>Reponemos cualquier herramienta con defecto de fabricación. Excluye mal uso, maltrato y desgaste normal.</p></div>
+    <div class="svc"><span class="k">A medida</span><h3>Medidas especiales</h3><p>Si la tuerca no está en catálogo, la fabricamos. Mandanos la medida y armamos la ficha técnica con el taller.</p></div>
+    <div class="svc"><span class="k">Respuesta técnica</span><h3>Hablás con quien fabrica</h3><p>Precio y plazo confirmados por fábrica o por el distribuidor de tu zona, con el código exacto de pieza.</p></div>
+  </div>
+</section>
+
+<section class="band" id="catalogo">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Catálogo</p>
+      <h2>Buscá por medida, encastre o material</h2>
+      <p>Escribí como lo pedís en el pozo: "estrella 2-3/16", "46 mm encastre 1", "maza bronce 3 kg".</p>
+    </div>
+    <div class="cat-tools">
+      <div class="field"><label for="q">Buscar</label><input id="q" type="search" placeholder="Ej. llave de golpe 2-3/8&quot; antichispa"></div>
+      <div class="field"><label for="fFam">Familia</label><select id="fFam"></select></div>
+      <div class="field"><label for="fMat">Material</label><select id="fMat"></select></div>
+      <div class="field"><label for="fDrive">Encastre</label><select id="fDrive"></select></div>
+      <div class="field"><label for="fUnit">Sistema</label><select id="fUnit"><option value="">mm y pulgadas</option><option value="mm">Milímetros</option><option value="in">Pulgadas</option></select></div>
+    </div>
+    <div class="cat-meta">
+      <div class="famchips" id="famchips"></div>
+      <span id="catCount" class="mono"></span>
+    </div>
+    <div class="table-wrap">
+      <table class="cat">
+        <thead><tr><th>Código</th><th>Producto</th><th>Medida</th><th>Encastre</th><th>Material</th><th>Norma</th><th></th></tr></thead>
+        <tbody id="catBody"></tbody>
+      </table>
+      <div class="more"><button class="btn btn-sm" id="moreBtn" type="button">Ver más</button></div>
+    </div>
+    <p class="note" style="margin-top:var(--s-3)">Catálogo de muestra armado con las familias publicadas por distribuidores. Reemplazar por el catálogo oficial antes de publicar el sitio.</p>
+  </div>
+</section>
+
+<section class="band" id="bridas" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Herramienta</p>
+      <h2>¿Qué llave necesito para esta brida?</h2>
+      <p>Elegí la clase y el diámetro nominal. Calculamos el espárrago, la tuerca hexagonal pesada y la llave de golpe que la mueve.</p>
+    </div>
+    <div class="tool">
+      <div class="tool-form">
+        <div class="field"><label>Clase ASME B16.5</label><div class="seg" id="segClass"></div></div>
+        <div class="field"><label>Diámetro nominal (NPS)</label><div class="seg" id="segNps"></div></div>
+        <p class="note">Tuerca pesada ASTM A194 2H: entre caras = 1,5 × diámetro + 1/8". Referencia orientativa; verificá con el plano o el espárrago instalado.</p>
+      </div>
+      <div class="tool-out">
+        <div class="readout">
+          <div><span>Espárrago</span><b id="roStud">—</b><small id="roStudMm"></small></div>
+          <div><span>Entre caras</span><b id="roAf">—</b><small id="roAfMm"></small></div>
+          <div><span>Encastre sugerido</span><b id="roDrive">—</b><small>bocallave de impacto</small></div>
+        </div>
+        <svg class="drawing" id="drawing" viewBox="0 0 640 220" role="img" aria-label="Croquis de llave de golpe estrella con la medida entre caras"></svg>
+        <div id="flangeItems"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band ns-band" id="antichispa">
+  <div class="wrap ns-grid">
+    <div class="sec-head" style="margin:0">
+      <p class="eyebrow">Línea antichispa</p>
+      <h2>La aleación correcta para el gas de tu zona</h2>
+      <p>En áreas clasificadas la herramienta se elige por el grupo de gas. Fabricamos llaves de golpe, combinadas y mazas sin hierro, que no generan chispa de ignición al golpear.</p>
+      <div style="display:flex;gap:var(--s-3);flex-wrap:wrap;margin-top:var(--s-3)">
+        <button class="btn btn-accent" type="button" data-goto-mat="ns">Ver antichispa en catálogo</button>
+        <button class="btn" type="button" data-ask="¿Qué aleación antichispa uso para una planta con H₂S?">Consultar al asistente</button>
+      </div>
+    </div>
+    <div style="display:grid;gap:var(--s-4);min-width:0">
+      <div class="table-wrap" style="border:0;background:transparent">
+        <table class="groups">
+          <thead><tr><th>Grupo de gas</th><th>Ejemplos</th><th>Bronce-aluminio</th><th>Cobre-berilio</th><th>Cobre / bronce</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">I</td><td>Metano en mina (grisú)</td><td class="yes">Sí</td><td class="yes">Sí</td><td class="yes">Sí</td></tr>
+            <tr><td class="mono">IIA</td><td>Gas natural, propano, naftas, crudo</td><td class="yes">Sí</td><td class="yes">Sí</td><td class="yes">Sí</td></tr>
+            <tr><td class="mono">IIB</td><td>Etileno, ácido sulfhídrico (H₂S)</td><td class="yes">Sí</td><td class="yes">Sí</td><td class="no">No</td></tr>
+            <tr><td class="mono">IIC</td><td>Hidrógeno, disulfuro de carbono</td><td class="no">No</td><td class="yes">Sí</td><td class="no">No</td></tr>
+            <tr><td class="mono">Dureza</td><td>Brinell típica</td><td class="mono">229–291 HB</td><td class="mono">283–365 HB</td><td class="mono">Baja</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="callout"><b>Acetileno:</b> ninguna aleación con más de 65% de cobre se usa en contacto con acetileno. Las herramientas antichispa conducen electricidad: no son antiestáticas ni reemplazan los permisos de trabajo de la zona.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Cómo trabajamos</p>
+      <h2>De la medida a la herramienta en la locación</h2>
+    </div>
+    <ol class="steps">
+      <li><h3>Identificá la pieza</h3><p>Con el catálogo, el asistente o la calculadora de bridas. Si no está, cargá una medida especial.</p></li>
+      <li><h3>Armá la cotización</h3><p>Sumá códigos y cantidades. Copiá el pedido y mandalo por WhatsApp o correo.</p></li>
+      <li><h3>Precio y plazo confirmados</h3><p>Te respondemos desde fábrica o derivamos al distribuidor de tu zona con el número de pieza exacto.</p></li>
+      <li><h3>Respaldo de por vida</h3><p>Si una herramienta falla por fabricación, la reponemos. Sin reclamos al exterior.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" id="distribuidores" style="padding-top:0">
+  <div class="wrap dist-grid">
+    <div class="locate">
+      <p class="eyebrow">Red de distribución</p>
+      <h2 style="font-size:var(--t-xl);font-weight:850">¿Dónde está tu operación?</h2>
+      <p class="note">Escribí la localidad y te indicamos quién te atiende más cerca.</p>
+      <div class="field"><label for="locIn">Localidad o provincia</label><input id="locIn" placeholder="Añelo, Campana, Rosario, Córdoba…"></div>
+      <p id="locOut" class="note" aria-live="polite"></p>
+    </div>
+    <div class="dist-list" id="distList"></div>
+  </div>
+</section>
+
+<section class="band" id="especial" style="padding-top:0">
+  <div class="wrap special">
+    <div class="sec-head" style="margin:0">
+      <p class="eyebrow">Fabricación especial</p>
+      <h2>¿La medida no está? La fabricamos.</h2>
+      <p>Cargá los datos que tengas. Armamos una pre-ficha técnica para el taller y la sumamos a tu cotización.</p>
+    </div>
+    <form class="form-grid" id="specialForm">
+      <div class="field"><label for="spType">Tipo de herramienta</label><select id="spType"><option>Llave de golpe estrella</option><option>Llave de golpe boca fija</option><option>Llave de golpe hexagonal</option><option>Bocallave de impacto</option><option>Maza</option><option>Otra</option></select></div>
+      <div class="field"><label for="spMat">Material</label><select id="spMat"><option>Acero aleado</option><option>Antichispa bronce-aluminio</option><option>Antichispa cobre-berilio</option><option>A definir</option></select></div>
+      <div class="field"><label for="spSize">Medida entre caras</label><input id="spSize" placeholder="Ej. 3-1/2&quot; o 88 mm" required></div>
+      <div class="field"><label for="spDrive">Encastre (si aplica)</label><select id="spDrive"><option value="">No aplica</option><option>1/2"</option><option>3/4"</option><option>1"</option><option>1-1/2"</option><option>2-1/2"</option></select></div>
+      <div class="field"><label for="spQty">Cantidad</label><input id="spQty" type="number" min="1" value="2"></div>
+      <div class="field"><label for="spUse">Aplicación</label><input id="spUse" placeholder="Ej. bridas de cabeza de pozo 10M"></div>
+      <div class="field full"><label for="spNotes">Notas (largo, acodado, espacio disponible)</label><textarea id="spNotes" rows="3" placeholder="Ej. espacio libre de 120 mm entre espárragos"></textarea></div>
+      <div class="full"><button class="btn btn-accent" type="submit">Sumar a la cotización</button></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div style="display:grid;gap:var(--s-3)">
+      <span class="wordmark" style="font-size:1.6rem"><i aria-hidden="true"></i>IMPACTOOLS</span>
+      <p>Fabricación de bocallaves de alto impacto, llaves de golpe y herramientas antichispa para servicio pesado. Todas nuestras herramientas se construyen en aceros especiales tratados térmicamente.</p>
+    </div>
+    <div>
+      <p class="eyebrow" style="color:var(--hero-muted);margin-bottom:var(--s-3)">Contacto</p>
+      <ul>
+        <li>WhatsApp <span class="sel">+54 9 11 3958-4803</span></li>
+        <li>Teléfono <span class="sel">+54 11 4218-4464</span></li>
+        <li>Correo <span class="sel">impactools@hotmail.com</span></li>
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow" style="color:var(--hero-muted);margin-bottom:var(--s-3)">Planta</p>
+      <ul><li>México 643, Avellaneda</li><li>Buenos Aires, Argentina</li><li>Impactools SRL</li></ul>
+    </div>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Pedido de cotización" aria-hidden="true">
+  <div class="drawer-head"><h2>Tu cotización</h2><button class="x" id="closeQuote" type="button" aria-label="Cerrar">×</button></div>
+  <div class="drawer-body">
+    <div id="qList"></div>
+    <div class="field"><label for="qCompany">Empresa</label><input id="qCompany" placeholder="Razón social"></div>
+    <div class="field"><label for="qLoc">Locación de entrega</label><input id="qLoc" placeholder="Ej. Añelo, Neuquén"></div>
+    <div class="field"><label for="qContact">Contacto</label><input id="qContact" placeholder="Nombre y teléfono"></div>
+    <div class="field"><label for="qNotes">Notas</label><textarea id="qNotes" rows="2" placeholder="Urgencia, condición de pago, OC"></textarea></div>
+    <div style="display:grid;gap:var(--s-2)">
+      <p class="eyebrow">Pedido para enviar</p>
+      <pre class="qtext" id="qText"></pre>
+      <button class="btn btn-accent" id="copyQuote" type="button">Copiar pedido</button>
+      <p class="note">Pegalo en WhatsApp al <span class="mono" style="user-select:all">+54 9 11 3958-4803</span> o por correo a <span class="mono" style="user-select:all">impactools@hotmail.com</span>. <span id="qDist"></span></p>
+    </div>
+  </div>
+</aside>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+(() => {
+/* ---------- Datos ---------- */
+const FAMILIES = [
+  {key:'er', label:'Llave de golpe estrella recta', short:'Golpe estrella recta', code:'IMPACLER', norma:'DIN 7444', group:'golpe'},
+  {key:'ea', label:'Llave de golpe estrella acodada', short:'Golpe estrella acodada', code:'IMPACLEA', norma:'DIN 7444', group:'golpe'},
+  {key:'hx', label:'Llave hexagonal recta de golpe', short:'Golpe hexagonal', code:'IMPACLHR', norma:'—', group:'golpe'},
+  {key:'bf', label:'Llave boca fija de golpe línea pesada', short:'Golpe boca fija', code:'IMPACLBF', norma:'DIN 133', group:'golpe'},
+  {key:'bh', label:'Bocallave hexagonal alto impacto', short:'Bocallave hexagonal', code:'ITBHCM', norma:'DIN 3129', group:'boca'},
+  {key:'be', label:'Bocallave estriada alto impacto', short:'Bocallave estriada', code:'ITBECM', norma:'DIN 3129', group:'boca'},
+  {key:'bl', label:'Bocallave larga hexagonal alto impacto', short:'Bocallave larga', code:'ITBHLM', norma:'DIN 3129', group:'boca'},
+  {key:'ns', label:'Llave de golpe estrella antichispa', short:'Antichispa golpe', code:'IMPACLERA', norma:'DIN 7444', group:'ns'},
+  {key:'nc', label:'Llave combinada antichispa', short:'Antichispa combinada', code:'IMPACLCA', norma:'DIN 3113', group:'ns'},
+  {key:'mz', label:'Maza', short:'Mazas', code:'IMPACMA', norma:'—', group:'maza'}
+];
+const MATS = {acero:'Acero aleado templado', albr:'Antichispa Al-Br', cube:'Antichispa Cu-Be', bronce:'Bronce', cobre:'Cobre'};
+const INCH = ['1-1/16','1-1/4','1-7/16','1-5/8','1-13/16','2','2-3/16','2-3/8','2-9/16','2-3/4','2-15/16','3-1/8','3-1/2','3-7/8','4-1/4','4-5/8','5','5-3/8'];
+const fracNum = s => { s = String(s).trim().replace(/["”]/g,''); let m = s.match(/^(\d+)[-\s]+(\d+)\/(\d+)$/); if (m) return +m[1] + m[2]/m[3]; m = s.match(/^(\d+)\/(\d+)$/); if (m) return m[1]/m[2]; return parseFloat(s.replace(',','.')); };
+const toFrac = x => { const w = Math.floor(x + 1e-9); let n = Math.round((x - w) * 16), d = 16; if (n === 0) return String(w); while (n % 2 === 0) { n /= 2; d /= 2; } return (w ? w + '-' : '') + n + '/' + d; };
+const mmFmt = v => (Math.round(v*10)/10).toLocaleString('es-AR');
+
+const ITEMS = [];
+const add = (fam, o) => { const f = FAMILIES.find(x => x.key === fam); ITEMS.push(Object.assign({fam, famLabel:f.label, norma:f.norma, group:f.group}, o)); };
+const mmSet = a => a;
+// Llaves de golpe estrella recta
+mmSet([24,27,30,32,36,41,46,50,55,60,65,70,75,80,85,90,95,100,105,110,115,120,130]).forEach(mm => add('er',{code:`IMPACLER-${mm}`, size:`${mm} mm`, mm, unit:'mm', mat:'acero'}));
+INCH.forEach(i => add('er',{code:`IMPACLER-${i.replace(/[-/]/g,'')}P`, size:`${i}"`, inch:fracNum(i), mm:fracNum(i)*25.4, unit:'in', mat:'acero'}));
+// Acodada
+[27,30,32,36,41,46,50,55,60,65,70,75,80,85,90,95,100,110,115].forEach(mm => add('ea',{code:`IMPACLEA-${mm}`, size:`${mm} mm`, mm, unit:'mm', mat:'acero'}));
+INCH.slice(0,14).forEach(i => add('ea',{code:`IMPACLEA-${i.replace(/[-/]/g,'')}P`, size:`${i}"`, inch:fracNum(i), mm:fracNum(i)*25.4, unit:'in', mat:'acero'}));
+// Hexagonal y boca fija
+[24,27,30,32,36,41,46,50,55,60,65,70,75,80].forEach(mm => add('hx',{code:`IMPACLHR-${mm}`, size:`${mm} mm`, mm, unit:'mm', mat:'acero'}));
+[50,55,60,65,70,75,80,85,90,95,100,105,110].forEach(mm => add('bf',{code:`IMPACLBF-${mm}`, size:`${mm} mm`, mm, unit:'mm', mat:'acero'}));
+// Bocallaves
+const DR = {'1/2"':[10,11,12,13,14,15,16,17,18,19,21,22,24,27,30,32],'3/4"':[17,19,21,22,24,27,30,32,34,36,38,41,46,50,55,60],'1"':[24,27,30,32,34,36,38,41,46,50,55,60,65,70,75,80],'1-1/2"':[36,41,46,50,55,60,65,70,75,80,85,90,95,100,105,110,115],'2-1/2"':[60,65,70,75,80,85,90,95,100,105,110,115,120,130,135,145,155]};
+Object.entries(DR).forEach(([d, sizes]) => sizes.forEach(mm => add('bh',{code:`ITBHCM-${d.replace(/[-/"]/g,'')}-${mm}`, size:`${mm} mm`, mm, unit:'mm', drive:d, mat:'acero'})));
+const DRI = {'1"':INCH.slice(0,8),'1-1/2"':INCH.slice(4,14),'2-1/2"':INCH.slice(9)};
+Object.entries(DRI).forEach(([d, sizes]) => sizes.forEach(i => add('bh',{code:`ITBHCP-${d.replace(/[-/"]/g,'')}-${i.replace(/[-/]/g,'')}`, size:`${i}"`, inch:fracNum(i), mm:fracNum(i)*25.4, unit:'in', drive:d, mat:'acero'})));
+[['3/4"',[24,27,30,32,36,41,46,50]],['1"',[30,32,36,41,46,50,55,60,65,70]]].forEach(([d,s]) => s.forEach(mm => { add('be',{code:`ITBECM-${d.replace(/[-/"]/g,'')}-${mm}`, size:`${mm} mm`, mm, unit:'mm', drive:d, mat:'acero'}); add('bl',{code:`ITBHLM-${d.replace(/[-/"]/g,'')}-${mm}`, size:`${mm} mm`, mm, unit:'mm', drive:d, mat:'acero'}); }));
+// Antichispa
+[24,27,30,32,36,41,46,50,55,60,65,70,75,80].forEach(mm => add('ns',{code:`IMPACLERA-AB-${mm}`, size:`${mm} mm`, mm, unit:'mm', mat:'albr'}));
+[27,30,32,36,41,46,50,55,60].forEach(mm => add('ns',{code:`IMPACLERA-CB-${mm}`, size:`${mm} mm`, mm, unit:'mm', mat:'cube'}));
+INCH.slice(0,10).forEach(i => add('ns',{code:`IMPACLERA-AB-${i.replace(/[-/]/g,'')}P`, size:`${i}"`, inch:fracNum(i), mm:fracNum(i)*25.4, unit:'in', mat:'albr'}));
+[10,13,17,19,22,24,27,30,32,36,41].forEach(mm => add('nc',{code:`IMPACLCA-${mm}`, size:`${mm} mm`, mm, unit:'mm', mat:'albr'}));
+// Mazas
+[1,2,3,4,5,6,8,10].forEach(kg => add('mz',{code:`IMPACMAACFI-${kg}`, size:`${kg} kg`, kg, unit:'kg', mat:'acero', name:'Maza de acero, mango de fibra'}));
+[1,2,3,5].forEach(kg => add('mz',{code:`IMPACMABRFI-${kg}`, size:`${kg} kg`, kg, unit:'kg', mat:'bronce', name:'Maza de bronce, mango de fibra'}));
+[1,1.5,2,3].forEach(kg => add('mz',{code:`IMPACMC-${String(kg).replace('.','')}`, size:`${String(kg).replace('.',',')} kg`, kg, unit:'kg', mat:'cobre', name:'Maza de cobre, mango de madera'}));
+ITEMS.forEach(it => { it.name = it.name || it.famLabel; it.matLabel = MATS[it.mat]; it.ns = ['albr','cube','bronce','cobre'].includes(it.mat); });
+const byCode = Object.fromEntries(ITEMS.map(i => [i.code, i]));
+
+const FLANGE = {
+  '150':{'2':.625,'3':.625,'4':.625,'6':.75,'8':.75,'10':.875,'12':.875,'16':1,'20':1.125,'24':1.25},
+  '300':{'2':.625,'3':.75,'4':.75,'6':.75,'8':.875,'10':1,'12':1.125,'16':1.25,'20':1.25,'24':1.5},
+  '600':{'2':.625,'3':.75,'4':.875,'6':1,'8':1.125,'10':1.25,'12':1.25,'16':1.5,'20':1.625,'24':1.875},
+  '900':{'2':.875,'3':.875,'4':1.125,'6':1.125,'8':1.375,'10':1.375,'12':1.375,'16':1.625,'20':2,'24':2.5},
+  '1500':{'2':.875,'3':1.125,'4':1.25,'6':1.375,'8':1.625,'10':1.875,'12':2,'16':2.5,'20':3,'24':3.5},
+  '2500':{'2':1,'3':1.25,'4':1.5,'6':2,'8':2,'10':2.5,'12':2.75}
+};
+const flangeCalc = (cls, nps) => { const d = FLANGE[cls]?.[nps]; if (!d) return null; const af = 1.5*d + .125; const drive = af <= 1.5 ? '3/4"' : af <= 2.6 ? '1"' : af <= 3.9 ? '1-1/2"' : '2-1/2"'; return {stud:d, af, drive}; };
+
+const DISTS = [
+  {name:'La Casa de las Herramientas', zone:'Neuquén · Vaca Muerta', desc:'Hub para operación en pozo: Añelo, Rincón de los Sauces, Plaza Huincul y Alto Valle.', url:'https://lacasadelasherramientas.com.ar/', keys:['neuquen','neuquén','añelo','anelo','rincon','rincón','sauces','plaza huincul','cutral','zapala','vaca muerta','allen','cipolletti','rio negro','río negro','roca','centenario','chos malal','mendoza','malargüe','malargue','la pampa','catriel']},
+  {name:'Bulonera Hurlingham', zone:'Buenos Aires · Nacional', desc:'Ferretería industrial con tienda online y envíos a todo el país.', url:'https://www.bulonerahurlingham.com.ar/', keys:['hurlingham','buenos aires','gba','conurbano','moron','morón','ituzaingo','campana','zarate','zárate','pilar','bahia blanca','bahía blanca','san antonio oeste','punta colorada','sierra grande','chubut','comodoro','santa cruz','tierra del fuego','salta','jujuy','catamarca','san juan','tucuman','tucumán']},
+  {name:'Nivel Industrial', zone:'CABA y GBA', desc:'Industria pesada en Ciudad de Buenos Aires y Gran Buenos Aires.', url:'https://www.nivelindustrial.com.ar/', keys:['caba','capital','ciudad de buenos aires','avellaneda','dock sud','ensenada','la plata','quilmes','lanus','lanús','berazategui']},
+  {name:'Ferretería Mediterránea', zone:'Región Centro', desc:'Metalmecánica y mantenimiento en Córdoba y alrededores.', url:'https://f-mediterranea.com.ar/', keys:['cordoba','córdoba','villa maria','villa maría','rio cuarto','río cuarto','san luis']},
+  {name:'Homero Distribuciones', zone:'Santa Fe · Litoral', desc:'Torque y seguridad para el polo petroquímico del Paraná.', url:'http://homerodistribuciones.com/', keys:['santa fe','rosario','san lorenzo','puerto san martin','puerto san martín','entre rios','entre ríos','parana','paraná','corrientes','chaco']}
+];
+const norm = s => String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+const findDist = loc => { const l = norm(loc); if (!l.trim()) return null; for (const d of DISTS) if (d.keys.some(k => l.includes(norm(k)))) return d; return null; };
+
+/* ---------- Búsqueda ---------- */
+function parseQuery(q){
+  const s = norm(q).replace(/[”″]/g,'"');
+  const out = {};
+  if (/berilio|cu-?be/.test(s)) out.mat = 'cube';
+  else if (/al-?br|bronce.?alumin|aluminio.?bronce/.test(s)) out.mat = 'albr';
+  else if (/antichispa|anti chispa|sin chispa|antiexplos/.test(s)) out.mat = 'ns';
+  else if (/bronce/.test(s)) out.mat = 'bronce';
+  else if (/cobre/.test(s)) out.mat = 'cobre';
+  if (/maza|martillo|mazo/.test(s)) out.fam = 'mz';
+  else if (/combinad/.test(s)) out.fam = 'nc';
+  else if (/bocallave|boca llave|tubo|vaso|dado|copa/.test(s)) out.fam = /estriad|12 punt/.test(s) ? 'be' : /larg/.test(s) ? 'bl' : 'bh';
+  else if (/boca fija|fija/.test(s)) out.fam = 'bf';
+  else if (/acodad|curv/.test(s)) out.fam = 'ea';
+  else if (/hexagonal/.test(s)) out.fam = 'hx';
+  else if (/golpe|estrella|slogging|striking/.test(s)) out.fam = 'golpe';
+  const dm = s.match(/encastre\s*(?:de\s*)?(1\s*-\s*1\/2|2\s*-\s*1\/2|1\/2|3\/4|1)\s*"?/);
+  if (dm) out.drive = dm[1].replace(/\s/g,'') + '"';
+  let rest = dm ? s.replace(dm[0],' ') : s;
+  const fm = rest.match(/brida|flange/);
+  const cm = rest.match(/(?:clase|class|serie)?\s*\b(150|300|600|900|1500|2500)\s*(?:#|lb|libras)?/);
+  if (fm && cm) { out.cls = cm[1]; rest = rest.replace(cm[0],' '); const nm = rest.match(/\b(2|3|4|6|8|10|12|16|20|24)\s*(?:"|pulg|in\b|nps)?/); if (nm) out.nps = nm[1]; return out; }
+  const kg = rest.match(/(\d+(?:[.,]\d+)?)\s*kg/); if (kg) { out.kg = parseFloat(kg[1].replace(',','.')); rest = rest.replace(kg[0],' '); }
+  const mm = rest.match(/(\d+(?:[.,]\d+)?)\s*mm/); if (mm) { out.mm = parseFloat(mm[1].replace(',','.')); return out; }
+  let im = rest.match(/(\d+)\s*[-\s]\s*(\d+)\/(\d+)/) || rest.match(/(\d+)\/(\d+)/);
+  if (im) { out.inch = im.length === 4 ? +im[1] + im[2]/im[3] : im[1]/im[2]; return out; }
+  im = rest.match(/(\d+(?:[.,]\d+)?)\s*("|pulg|pulgada|in\b)/); if (im) { out.inch = parseFloat(im[1].replace(',','.')); return out; }
+  const bare = rest.match(/\b(\d{2,3})\b/); if (bare && +bare[1] >= 8 && +bare[1] <= 160) out.mm = +bare[1];
+  return out;
+}
+function search(p, limit=12){
+  let pool = ITEMS.filter(it => {
+    if (p.fam === 'golpe') { if (it.group !== 'golpe' && it.fam !== 'ns') return false; }
+    else if (p.fam && it.fam !== p.fam && !(p.fam === 'nc' && false)) return false;
+    if (p.mat === 'ns') { if (!it.ns) return false; } else if (p.mat && it.mat !== p.mat) return false;
+    if (p.drive && it.drive !== p.drive) return false;
+    if (p.unit && it.unit !== p.unit) return false;
+    return true;
+  });
+  if (p.mat && p.mat !== 'ns' && p.fam === 'golpe') pool = pool.filter(i => i.mat === p.mat);
+  const target = p.inch ? p.inch*25.4 : p.mm;
+  if (target) {
+    pool = pool.filter(i => i.mm).map(i => ({i, d:Math.abs(i.mm - target)})).filter(x => x.d <= Math.max(2, target*0.06)).sort((a,b) => a.d - b.d || (p.inch ? (a.i.unit === 'in' ? -1 : 1) : (a.i.unit === 'mm' ? -1 : 1))).map(x => x.i);
+  } else if (p.kg) {
+    pool = pool.filter(i => i.kg).sort((a,b) => Math.abs(a.kg-p.kg) - Math.abs(b.kg-p.kg));
+  }
+  return limit ? pool.slice(0, limit) : pool;
+}
+const brief = i => ({codigo:i.code, producto:i.name, medida:i.size, encastre:i.drive || null, material:i.matLabel, norma:i.norma});
+
+/* ---------- Cotización ---------- */
+let quote = [];
+try { quote = JSON.parse(localStorage.getItem('imp-quote') || '[]'); if (!Array.isArray(quote)) quote = []; } catch(e) { quote = []; }
+const saveQ = () => { try { localStorage.setItem('imp-quote', JSON.stringify(quote)); } catch(e){} };
+const $ = id => document.getElementById(id);
+function toast(t){ const el = $('toast'); el.textContent = t; el.hidden = false; clearTimeout(toast.t); toast.t = setTimeout(() => el.hidden = true, 2200); }
+function addToQuote(code, qty=1, special){
+  const it = special || byCode[code]; if (!it) return false;
+  const ex = quote.find(q => q.code === it.code);
+  if (ex) ex.qty += qty; else quote.push({code:it.code, name:it.name, size:it.size, drive:it.drive||'', mat:it.matLabel || it.mat || '', qty, notes:it.notes||''});
+  saveQ(); renderQuote(); toast(`Sumado a la cotización: ${it.name} ${it.size}`); return true;
+}
+function quoteText(){
+  const lines = ['PEDIDO DE COTIZACIÓN · IMPACTOOLS', ''];
+  if (!quote.length) lines.push('(sin ítems)');
+  quote.forEach((q,n) => lines.push(`${n+1}. ${q.qty} u · ${q.code} · ${q.name} ${q.size}${q.drive ? ' · enc. '+q.drive : ''}${q.mat ? ' · '+q.mat : ''}${q.notes ? '\n   '+q.notes : ''}`));
+  lines.push('');
+  const f = [['Empresa','qCompany'],['Entrega','qLoc'],['Contacto','qContact'],['Notas','qNotes']];
+  f.forEach(([k,id]) => { const v = $(id).value.trim(); if (v) lines.push(`${k}: ${v}`); });
+  return lines.join('\n');
+}
+function renderQuote(){
+  $('qCount').textContent = quote.reduce((s,q) => s + q.qty, 0);
+  const list = $('qList'); list.innerHTML = '';
+  if (!quote.length) { list.innerHTML = '<p class="empty">Todavía no sumaste piezas. Usá "+ Cotizar" en el catálogo o en las respuestas del asistente.</p>'; }
+  quote.forEach((q, idx) => {
+    const row = document.createElement('div'); row.className = 'qitem';
+    row.innerHTML = `<div><div class="nm"></div><div class="mono"></div></div>`;
+    row.querySelector('.nm').textContent = `${q.name} ${q.size}`;
+    row.querySelector('.mono').textContent = `${q.code}${q.drive ? ' · enc. '+q.drive : ''}`;
+    const inp = document.createElement('input'); inp.type = 'number'; inp.min = '1'; inp.value = q.qty; inp.id = 'qty-'+idx; inp.setAttribute('aria-label','Cantidad');
+    inp.addEventListener('change', () => { q.qty = Math.max(1, parseInt(inp.value)||1); saveQ(); renderQuote(); });
+    const x = document.createElement('button'); x.className = 'x'; x.type = 'button'; x.textContent = '×'; x.setAttribute('aria-label','Quitar');
+    x.addEventListener('click', () => { quote.splice(idx,1); saveQ(); renderQuote(); });
+    row.append(inp, x); list.append(row);
+  });
+  $('qText').textContent = quoteText();
+  const d = findDist($('qLoc').value);
+  $('qDist').textContent = d ? `Para ${$('qLoc').value.trim()} te atiende ${d.name} (${d.zone}).` : '';
+}
+['qCompany','qLoc','qContact','qNotes'].forEach(id => $(id).addEventListener('input', renderQuote));
+const openQ = () => { $('drawer').classList.add('open'); $('drawer').setAttribute('aria-hidden','false'); $('scrim').hidden = false; };
+const closeQ = () => { $('drawer').classList.remove('open'); $('drawer').setAttribute('aria-hidden','true'); $('scrim').hidden = true; };
+$('openQuote').addEventListener('click', openQ); $('closeQuote').addEventListener('click', closeQ); $('scrim').addEventListener('click', closeQ);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeQ(); });
+$('copyQuote').addEventListener('click', () => {
+  const t = quoteText();
+  const sel = () => { const r = document.createRange(); r.selectNodeContents($('qText')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast('Pedido seleccionado: copialo con Ctrl+C'); };
+  try { navigator.clipboard.writeText(t).then(() => toast('Pedido copiado'), sel); } catch(e) { sel(); }
+});
+
+/* ---------- Catálogo ---------- */
+const fFam = $('fFam'), fMat = $('fMat'), fDrive = $('fDrive'), fUnit = $('fUnit'), qIn = $('q');
+fFam.innerHTML = '<option value="">Todas</option>' + FAMILIES.map(f => `<option value="${f.key}">${f.short}</option>`).join('');
+fMat.innerHTML = '<option value="">Todos</option><option value="ns">Antichispa (todas)</option>' + Object.entries(MATS).map(([k,v]) => `<option value="${k}">${v}</option>`).join('');
+fDrive.innerHTML = '<option value="">Todos</option>' + ['1/2"','3/4"','1"','1-1/2"','2-1/2"'].map(d => `<option>${d}</option>`).join('');
+const QUICK = [['','Todo'],['golpe','Llaves de golpe'],['boca','Bocallaves'],['ns','Antichispa'],['mz','Mazas']];
+let quickSel = ''; let shown = 30;
+$('famchips').innerHTML = QUICK.map(([k,l]) => `<button type="button" class="famchip" data-q="${k}" aria-pressed="${k===''}">${l}</button>`).join('');
+$('famchips').addEventListener('click', e => { const b = e.target.closest('.famchip'); if (!b) return; quickSel = b.dataset.q; fFam.value = ''; document.querySelectorAll('.famchip').forEach(x => x.setAttribute('aria-pressed', x === b)); shown = 30; renderCat(); });
+function catResults(){
+  const p = parseQuery(qIn.value);
+  if (fFam.value) p.fam = fFam.value;
+  if (fMat.value) p.mat = fMat.value;
+  if (fDrive.value) p.drive = fDrive.value;
+  if (fUnit.value) p.unit = fUnit.value;
+  if (p.cls) { const r = flangeCalc(p.cls, p.nps || '6'); if (r) { p.inch = r.af; p.fam = p.fam || 'golpe'; } }
+  let res = search(p, 0);
+  if (quickSel === 'golpe') res = res.filter(i => i.group === 'golpe');
+  else if (quickSel === 'boca') res = res.filter(i => i.group === 'boca');
+  else if (quickSel === 'ns') res = res.filter(i => i.ns);
+  else if (quickSel === 'mz') res = res.filter(i => i.fam === 'mz');
+  return res;
+}
+function renderCat(){
+  const res = catResults(); const body = $('catBody'); body.innerHTML = '';
+  res.slice(0, shown).forEach(it => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td class="code"></td><td class="nm"></td><td class="size"></td><td class="drive mono"></td><td class="mat"></td><td class="norma mono"></td><td class="act"><button class="btn btn-sm" type="button">+ Cotizar</button></td>`;
+    tr.querySelector('.code').textContent = it.code;
+    tr.querySelector('.nm').textContent = it.name;
+    tr.querySelector('.size').textContent = it.size + (it.unit === 'in' ? `  ·  ${mmFmt(it.mm)} mm` : '');
+    tr.querySelector('.drive').textContent = it.drive || '—';
+    const b = document.createElement('span'); b.className = 'badge' + (it.ns ? ' ns' : ''); b.textContent = it.matLabel; tr.querySelector('.mat').append(b);
+    tr.querySelector('.norma').textContent = it.norma;
+    tr.querySelector('button').addEventListener('click', () => addToQuote(it.code));
+    body.append(tr);
+  });
+  if (!res.length) body.innerHTML = '<tr><td colspan="7" style="padding:1.2rem">No encontramos esa medida en catálogo. <a href="#especial">Pedila como fabricación especial</a> o consultá al asistente.</td></tr>';
+  $('catCount').textContent = `${res.length} ${res.length === 1 ? 'pieza' : 'piezas'}`;
+  $('moreBtn').hidden = res.length <= shown;
+}
+[qIn, fFam, fMat, fDrive, fUnit].forEach(el => el.addEventListener('input', () => { shown = 30; renderCat(); }));
+$('moreBtn').addEventListener('click', () => { shown += 30; renderCat(); });
+document.querySelectorAll('[data-goto-mat]').forEach(b => b.addEventListener('click', () => { fMat.value = 'ns'; quickSel=''; document.querySelectorAll('.famchip').forEach(x => x.setAttribute('aria-pressed', x.dataset.q === '')); renderCat(); $('catalogo').scrollIntoView({behavior:'smooth'}); }));
+
+/* ---------- Calculadora de bridas ---------- */
+let fCls = '900', fNps = '6';
+const segC = $('segClass'), segN = $('segNps');
+segC.innerHTML = Object.keys(FLANGE).map(c => `<button type="button" data-v="${c}" aria-pressed="${c===fCls}">${c}#</button>`).join('');
+const renderNps = () => { segN.innerHTML = Object.keys(FLANGE[fCls]).map(n => `<button type="button" data-v="${n}" aria-pressed="${n===fNps}">${n}"</button>`).join(''); };
+renderNps();
+segC.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; fCls = b.dataset.v; if (!FLANGE[fCls][fNps]) fNps = '6'; segC.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); renderNps(); renderFlange(); });
+segN.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; fNps = b.dataset.v; segN.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); renderFlange(); });
+function drawWrench(afLabel, mmLabel){
+  const cx = 140, cy = 110, R = 82, r1 = 46, r2 = 40, pts = [];
+  for (let k = 0; k < 24; k++) { const a = Math.PI/2 + k*Math.PI/12, rr = k % 2 ? r2 : r1; pts.push(`${(cx + rr*Math.cos(a)).toFixed(1)},${(cy + rr*Math.sin(a)).toFixed(1)}`); }
+  const af = r1 + r2;
+  $('drawing').innerHTML = `
+    <g fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linejoin="round">
+      <path d="M ${cx+R*0.78} ${cy-R*0.62} L 560 ${cy-26} L 590 ${cy-34} L 610 ${cy-34} L 610 ${cy+34} L 590 ${cy+34} L 560 ${cy+26} L ${cx+R*0.78} ${cy+R*0.62}" fill="var(--surface)"/>
+      <circle cx="${cx}" cy="${cy}" r="${R}" fill="var(--surface)"/>
+      <polygon points="${pts.join(' ')}" fill="var(--surface-2)"/>
+      <rect x="590" y="${cy-34}" width="20" height="68" fill="var(--accent)" stroke="var(--ink)"/>
+    </g>
+    <g stroke="var(--accent-ink)" stroke-width="1.4" fill="var(--accent-ink)">
+      <line x1="${cx-af/2}" y1="${cy}" x2="${cx+af/2}" y2="${cy}"/>
+      <polygon points="${cx-af/2},${cy} ${cx-af/2+8},${cy-4} ${cx-af/2+8},${cy+4}"/>
+      <polygon points="${cx+af/2},${cy} ${cx+af/2-8},${cy-4} ${cx+af/2-8},${cy+4}"/>
+      <line x1="${cx}" y1="${cy}" x2="${cx+125}" y2="${cy-70}" stroke-dasharray="3 3"/>
+    </g>
+    <text x="${cx+130}" y="${cy-76}" font-family="IBM Plex Mono, monospace" font-size="18" font-weight="600" fill="var(--ink)">S = ${afLabel}</text>
+    <text x="${cx+130}" y="${cy-54}" font-family="IBM Plex Mono, monospace" font-size="13" fill="var(--muted)">${mmLabel} · 12 puntas</text>
+    <text x="586" y="${cy+56}" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--muted)">zona de golpe</text>
+    <text x="24" y="206" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--muted)">LLAVE DE GOLPE ESTRELLA · DIN 7444 · CROQUIS SIN ESCALA</text>`;
+}
+function renderFlange(){
+  const r = flangeCalc(fCls, fNps); if (!r) return;
+  $('roStud').textContent = toFrac(r.stud) + '"'; $('roStudMm').textContent = mmFmt(r.stud*25.4) + ' mm';
+  $('roAf').textContent = toFrac(r.af) + '"'; $('roAfMm').textContent = mmFmt(r.af*25.4) + ' mm';
+  $('roDrive').textContent = r.drive;
+  drawWrench(toFrac(r.af)+'"', mmFmt(r.af*25.4)+' mm');
+  const found = [...search({fam:'golpe', inch:r.af}, 4), ...search({fam:'bh', drive:r.drive, inch:r.af}, 2)];
+  const box = $('flangeItems'); box.innerHTML = `<p class="eyebrow" style="margin-bottom:.3rem">Piezas para brida ${fNps}" clase ${fCls}</p>`;
+  if (!found.length) box.innerHTML += '<p class="note">Sin pieza en catálogo para esta medida. <a href="#especial">Pedila como especial</a>.</p>';
+  found.forEach(it => { const row = document.createElement('div'); row.className = 'listrow'; row.innerHTML = '<div><div></div><div class="mono"></div></div>'; row.firstChild.firstChild.textContent = `${it.name} ${it.size}`; row.querySelector('.mono').textContent = `${it.code}${it.drive ? ' · enc. '+it.drive : ''} · ${it.matLabel}`; const b = document.createElement('button'); b.className = 'btn btn-sm'; b.type = 'button'; b.textContent = '+ Cotizar'; b.addEventListener('click', () => addToQuote(it.code)); row.append(b); box.append(row); });
+}
+
+/* ---------- Distribuidores ---------- */
+function renderDists(hl){
+  $('distList').innerHTML = '';
+  DISTS.forEach(d => { const el = document.createElement('div'); el.className = 'dist' + (hl === d ? ' hl' : ''); el.innerHTML = `<div style="display:grid;gap:.2rem"><span class="zone"></span><h3></h3><p></p></div><a target="_blank" rel="noopener">Sitio web ↗</a>`; el.querySelector('.zone').textContent = d.zone; el.querySelector('h3').textContent = d.name; el.querySelector('p').textContent = d.desc; el.querySelector('a').href = d.url; $('distList').append(el); });
+}
+$('locIn').addEventListener('input', () => { const v = $('locIn').value; const d = findDist(v); $('locOut').textContent = !v.trim() ? '' : d ? `Te atiende ${d.name} (${d.zone}).` : 'No tenemos distribuidor asignado para esa zona: te atendemos directo desde fábrica.'; renderDists(d); });
+
+/* ---------- Medida especial ---------- */
+$('specialForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const size = $('spSize').value.trim(); if (!size) { $('spSize').focus(); return; }
+  const n = quote.filter(q => q.code.startsWith('ESP-')).length + 1;
+  const notes = [$('spUse').value.trim() && 'Aplicación: '+$('spUse').value.trim(), $('spNotes').value.trim()].filter(Boolean).join(' · ');
+  addToQuote(null, Math.max(1, parseInt($('spQty').value)||1), {code:`ESP-${String(n).padStart(2,'0')}`, name:`${$('spType').value} (especial)`, size, drive:$('spDrive').value, matLabel:$('spMat').value, notes});
+  e.target.reset(); $('spQty').value = 2; openQ();
+});
+
+/* ---------- Asistente ---------- */
+const msgs = $('msgs');
+let mode = 'local', sampleFn = null, history = [], busy = false, ctl = null;
+function addMsg(role, text, items, tag){
+  const m = document.createElement('div'); m.className = 'msg ' + role;
+  if (tag) { const t = document.createElement('span'); t.className = 'tag'; t.textContent = tag; m.append(t); }
+  const b = document.createElement('div'); b.className = 'bubble'; b.textContent = text; m.append(b);
+  const c = document.createElement('div'); c.className = 'cards'; m.append(c);
+  msgs.append(m); msgs.scrollTop = msgs.scrollHeight;
+  const api = {set(t){ b.textContent = t; msgs.scrollTop = msgs.scrollHeight; }, cards(list){ c.innerHTML = ''; (list||[]).slice(0,6).forEach(it => { const el = document.createElement('div'); el.className = 'pcard'; el.innerHTML = '<div><div class="nm"></div><div class="meta"></div></div>'; el.querySelector('.nm').textContent = `${it.name} ${it.size}`; el.querySelector('.meta').textContent = `${it.code}${it.drive ? ' · enc. '+it.drive : ''} · ${it.matLabel}`; const btn = document.createElement('button'); btn.className = 'btn btn-sm'; btn.type = 'button'; btn.textContent = '+ Cotizar'; btn.addEventListener('click', () => addToQuote(it.code)); el.append(btn); c.append(el); }); msgs.scrollTop = msgs.scrollHeight; }};
+  api.cards(items); return api;
+}
+function localAnswer(q){
+  const s = norm(q);
+  if (/h2s|sulfhidr|hidrogeno|hidrógeno|grupo|zona|aleacion|aleación|berilio.*o|que antichispa|qué antichispa/.test(s) && /antichispa|aleac|h2s|hidrog|grupo/.test(s)) {
+    if (/hidrogeno|hidrógeno|disulfuro|iic|refiner/.test(s)) return {text:'Para hidrógeno o disulfuro de carbono (grupo IIC) usá cobre-berilio: el bronce-aluminio no está admitido en ese grupo. Te dejo las llaves de golpe Cu-Be de catálogo.', items:search({mat:'cube'},6)};
+    return {text:'Con H₂S (grupo IIB) el bronce-aluminio está admitido y es la opción más económica. Cobre-berilio también sirve y es más duro. Evitá mazas de cobre o bronce comunes: solo van en grupos I y IIA. Estas son llaves de golpe Al-Br:', items:search({mat:'albr', fam:'ns'},6)};
+  }
+  const p = parseQuery(q);
+  const locWords = q.replace(/distribuidor|en|cerca|de|para|quién|quien|me|atiende|\?/gi,' ');
+  if (/distribuid|donde compr|dónde compr|cerca|vende/.test(s)) { const d = findDist(locWords); return {text: d ? `Para esa zona te atiende ${d.name} (${d.zone}). Sitio: ${d.url}\nTambién podés armar la cotización acá y te derivamos con el código exacto.` : 'No tengo un distribuidor asignado para esa localidad: te atendemos directo desde fábrica. Armá la cotización y mandala por WhatsApp al +54 9 11 3958-4803.', items:[]}; }
+  if (p.cls) {
+    const nps = p.nps || '6'; const r = flangeCalc(p.cls, nps);
+    if (!r) return {text:`No tengo la brida ${nps}" clase ${p.cls} en la tabla de referencia. Pasame el diámetro del espárrago y te digo la llave.`, items:[]};
+    return {text:`Brida ${nps}" clase ${p.cls} (ASME B16.5): espárrago ${toFrac(r.stud)}", tuerca pesada 2H de ${toFrac(r.af)}" entre caras (${mmFmt(r.af*25.4)} mm). Para golpe: llave estrella ${toFrac(r.af)}". Con pistola: bocallave encastre ${r.drive}. Verificá con el espárrago instalado.`, items:[...search({fam:'golpe', inch:r.af, mat:p.mat},3), ...search({fam:'bh', drive:r.drive, inch:r.af},2)]};
+  }
+  const res = search(p, 6);
+  if (!Object.keys(p).length) return {text:'Decime la medida (mm o pulgadas), el tipo de herramienta o la brida, y busco en el catálogo. Ejemplos: "estrella 2-3/16", "bocallave 46 mm encastre 1", "brida 8\\" clase 600".', items:[]};
+  if (!res.length) return {text:'No tengo esa medida en catálogo. La podemos fabricar a pedido: cargala en "Fabricación especial" y la sumamos a tu cotización.', items:[]};
+  const what = p.inch ? toFrac(p.inch)+'"' : p.mm ? p.mm+' mm' : p.kg ? p.kg+' kg' : '';
+  return {text:`Encontré ${res.length === 6 ? 'estas opciones' : res.length + (res.length === 1 ? ' opción' : ' opciones')}${what ? ' para '+what : ''}. Precio y plazo se confirman en la cotización.`, items:res};
+}
+const RULES = `Sos Roger, el asistente técnico de la web de Impactools SRL, fabricante argentino (planta en México 643, Avellaneda) de llaves de golpe, bocallaves de alto impacto, herramientas antichispa y mazas para la industria petrolera, plantas, terminales y minería. Hablás en español rioplatense, claro y breve (máximo 110 palabras), como un técnico de ventas que conoce el pozo. Texto plano, sin tablas ni markdown salvo saltos de línea.
+Reglas:
+- Antes de nombrar un producto, buscalo con buscar_catalogo. Mencioná siempre el código. Las piezas que encuentres se muestran solas como tarjetas debajo de tu respuesta, no hace falta listarlas todas.
+- Para bridas usá llave_para_brida (ASME B16.5, tuerca pesada 2H) y aclarales que verifiquen con el espárrago instalado.
+- Nunca inventes precios, stock ni plazos: se confirman en la cotización. Impactools no vende online: el cliente arma un pedido de cotización en esta página y lo envía por WhatsApp (+54 9 11 3958-4803) o correo (impactools@hotmail.com), o compra en el distribuidor de su zona (usá distribuidor_cercano).
+- Si la medida no está en catálogo, ofrecé fabricación especial (sección "Fabricación especial" de la página).
+- Antichispa: grupos I y IIA admiten cobre/bronce/Al-Br/Cu-Be; IIB (H2S, etileno) Al-Br o Cu-Be; IIC (hidrógeno, disulfuro de carbono, plantas de flotación de cobre con xantatos) solo Cu-Be. Nunca aleaciones con más de 65% de cobre en contacto con acetileno. Las antichispa no son antiestáticas.
+- Garantía de por vida contra defectos de fabricación (excluye mal uso y desgaste normal).
+- Si te piden agregar algo a la cotización, usá agregar_a_cotizacion.
+- Temas ajenos a herramientas e Impactools: respondé que solo podés ayudar con eso.`;
+const lastFound = [];
+const TOOLS = [
+  {name:'buscar_catalogo', description:'Busca piezas en el catálogo de Impactools. Devuelve hasta 8 piezas con código, producto, medida, encastre, material y norma. Acepta texto libre en español (medida en mm o pulgadas, tipo, material, encastre) y filtros opcionales.', inputSchema:{type:'object', properties:{texto:{type:'string', description:'Consulta, ej. "llave de golpe estrella 2-3/16 antichispa" o "bocallave 46 mm encastre 1"'}, familia:{type:'string', enum:['golpe','er','ea','hx','bf','bh','be','bl','ns','nc','mz'], description:'golpe=todas las llaves de golpe; er estrella recta; ea acodada; hx hexagonal; bf boca fija; bh bocallave hexagonal; be estriada; bl larga; ns golpe antichispa; nc combinada antichispa; mz mazas'}, material:{type:'string', enum:['acero','ns','albr','cube','bronce','cobre']}, medida_mm:{type:'number'}, medida_pulgadas:{type:'string', description:'ej. "2-3/16"'}, encastre:{type:'string', enum:['1/2"','3/4"','1"','1-1/2"','2-1/2"']}}}, execute(input){ const p = parseQuery(String(input.texto||'')); if (input.familia) p.fam = String(input.familia); if (input.material) p.mat = String(input.material); if (input.medida_mm) { p.mm = Number(input.medida_mm); delete p.inch; } if (input.medida_pulgadas) { p.inch = fracNum(String(input.medida_pulgadas)); delete p.mm; } if (input.encastre) p.drive = String(input.encastre); delete p.cls; const r = search(p, 8); r.forEach(i => { if (!lastFound.includes(i)) lastFound.push(i); }); return r.length ? r.map(brief) : 'Sin resultados en catálogo: ofrecer fabricación especial.'; }},
+  {name:'llave_para_brida', description:'Calcula el espárrago, la medida entre caras de la tuerca pesada 2H y el encastre sugerido para una brida ASME B16.5, y busca las llaves de golpe y bocallaves que corresponden.', inputSchema:{type:'object', properties:{clase:{type:'string', enum:['150','300','600','900','1500','2500']}, nps:{type:'string', enum:['2','3','4','6','8','10','12','16','20','24']}}, required:['clase','nps']}, execute(input){ const r = flangeCalc(String(input.clase), String(input.nps)); if (!r) throw new Error('Combinación de clase y diámetro fuera de la tabla'); const items = [...search({fam:'golpe', inch:r.af},3), ...search({fam:'bh', drive:r.drive, inch:r.af},2)]; items.forEach(i => { if (!lastFound.includes(i)) lastFound.push(i); }); return {esparrago_pulg:toFrac(r.stud), entre_caras_pulg:toFrac(r.af), entre_caras_mm:Math.round(r.af*254)/10, encastre_sugerido:r.drive, piezas:items.map(brief)}; }},
+  {name:'distribuidor_cercano', description:'Devuelve el distribuidor oficial de Impactools para una localidad o provincia argentina, o indica atención directa de fábrica.', inputSchema:{type:'object', properties:{ubicacion:{type:'string'}}, required:['ubicacion']}, execute(input){ const d = findDist(String(input.ubicacion)); return d ? {nombre:d.name, zona:d.zone, web:d.url} : 'Sin distribuidor asignado: atención directa de fábrica.'; }},
+  {name:'agregar_a_cotizacion', description:'Agrega una pieza del catálogo al pedido de cotización del visitante, por código exacto.', inputSchema:{type:'object', properties:{codigo:{type:'string'}, cantidad:{type:'number'}}, required:['codigo']}, execute(input){ const ok = addToQuote(String(input.codigo), Math.max(1, Math.round(Number(input.cantidad)||1))); if (!ok) throw new Error('Código inexistente'); return 'Agregado'; }}
+];
+function setMode(m){ mode = m; const on = m === 'ai' || m === 'api'; $('advMode').textContent = on ? 'En línea' : 'Búsqueda rápida'; $('advDot').style.background = on ? 'var(--good)' : 'var(--warn)'; }
+/* Backend propio (Vercel): /api/chat llama a la API de Anthropic; las herramientas corren acá en la página */
+async function apiAsk(turns, signal, onText){
+  const toolMap = Object.fromEntries(TOOLS.map(t => [t.name, t]));
+  const messages = turns.map(t => ({role:t.role, content:t.content}));
+  let texts = [];
+  for (let round = 0; round < 5; round++) {
+    const res = await fetch('/api/chat', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({messages}), signal});
+    if (res.status === 429) throw {code:'rate_limited'};
+    if (!res.ok) throw {code:'upstream_error'};
+    const data = await res.json();
+    const blocks = Array.isArray(data.content) ? data.content : [];
+    const t = blocks.filter(b => b.type === 'text').map(b => b.text).join('').trim();
+    if (t) { texts.push(t); onText(texts.join('\n\n')); }
+    if (data.stop_reason !== 'tool_use') break;
+    messages.push({role:'assistant', content:blocks});
+    const results = [];
+    for (const b of blocks.filter(b => b.type === 'tool_use')) {
+      let out, isErr = false;
+      try { const tool = toolMap[b.name]; if (!tool) throw new Error('Herramienta desconocida'); out = await tool.execute(b.input || {}, {signal}); }
+      catch (err) { out = 'Error: ' + (err && err.message || err); isErr = true; }
+      results.push({type:'tool_result', tool_use_id:b.id, content:typeof out === 'string' ? out : JSON.stringify(out), is_error:isErr});
+    }
+    messages.push({role:'user', content:results});
+  }
+  const text = texts.join('\n\n');
+  if (!text) throw {code:'empty_completion'};
+  return {text};
+}
+async function ask(q){
+  q = q.trim(); if (!q || busy) return;
+  addMsg('user', q);
+  if (mode !== 'ai' && mode !== 'api') { const a = localAnswer(q); addMsg('bot', a.text, a.items); return; }
+  busy = true; $('advSend').textContent = 'Detener';
+  const bot = addMsg('bot', 'Pensando…'); bot.set('Pensando…');
+  history.push({role:'user', content:q}); if (history.length > 12) history = history.slice(-12); if (history[0]?.role !== 'user') history.shift();
+  lastFound.length = 0; ctl = new AbortController();
+  try {
+    const show = text => { bot.set(text); bot.cards(lastFound); };
+    const {text} = mode === 'api'
+      ? await apiAsk(history, ctl.signal, show)
+      : await sampleFn([{role:'user', content:RULES}, ...history], {modelTier:'quick', tools:TOOLS, signal:ctl.signal, onText:({text}) => show(text)});
+    bot.set(text); bot.cards(lastFound); history.push({role:'assistant', content:text});
+  } catch(e) {
+    history.pop();
+    const code = e && e.code;
+    if (code === 'cancelled' || (e && e.name === 'AbortError')) { bot.set(e.text || 'Consulta detenida.'); }
+    else if (['not_granted','sampling_disabled','not_declared','capability_disabled','capability_removed','tools_unavailable'].includes(code)) { setMode('local'); const a = localAnswer(q); bot.set(a.text); bot.cards(a.items); }
+    else if (code === 'rate_limited') { bot.set('Hay muchas consultas seguidas. Probá de nuevo en un momento; mientras tanto, usá el buscador del catálogo.'); }
+    else { const a = localAnswer(q); bot.set((e && e.text ? e.text + '\n\n' : '') + a.text); bot.cards(a.items); }
+  } finally { busy = false; $('advSend').textContent = 'Enviar'; ctl = null; }
+}
+$('composer').addEventListener('submit', e => { e.preventDefault(); if (busy && ctl) { ctl.abort(); return; } const v = $('advInput').value; $('advInput').value = ''; ask(v); });
+$('chips').addEventListener('click', e => { const b = e.target.closest('.chip'); if (b) ask(b.textContent); });
+document.querySelectorAll('[data-ask]').forEach(b => b.addEventListener('click', () => { $('inicio').scrollIntoView({behavior:'smooth'}); ask(b.dataset.ask); }));
+
+/* ---------- Inicio ---------- */
+renderQuote(); renderCat(); renderFlange(); renderDists();
+addMsg('bot', 'Hola, soy Roger. Decime la medida, la brida o el gas de la zona y te digo qué herramienta usar y dónde conseguirla.');
+const ex = localAnswer('Llave de golpe para brida 6" clase 900');
+addMsg('user', 'Llave de golpe para brida 6" clase 900', null, 'Ejemplo');
+addMsg('bot', ex.text, ex.items);
+setMode('local');
+if (window.claude && typeof window.claude.use === 'function') {
+  window.claude.use('sample').then(async fn => { if (!fn) return; try { const lim = await fn.limits(); if (!lim || !lim.tools) return; } catch(e) { return; } sampleFn = fn; setMode('ai'); }).catch(() => {});
+} else if (location.protocol.startsWith('http')) {
+  fetch('/api/chat').then(r => r.ok ? r.json() : null).then(d => { if (d && d.ai) setMode('api'); }).catch(() => {});
+}
+})();
+</script>
+
+</body>
+</html>
