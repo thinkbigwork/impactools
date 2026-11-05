@@ -1,4 +1,4 @@
-// Función serverless de Vercel para el asistente Roger.
+// Función serverless de Vercel para el asistente Smarty.
 // Recibe la conversación desde la página, agrega las instrucciones y las herramientas,
 // y llama a la API de Anthropic. Las herramientas (catálogo, bridas, distribuidores,
 // cotización) se ejecutan en el navegador del visitante; esta función solo hace de puente.

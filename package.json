@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Sitio web de Impactools SRL con el asistente técnico Roger",
+  "description": "Sitio web de Impactools SRL con el asistente técnico con IA Smarty",
   "engines": { "node": ">=18" }
 }

@@ -103,7 +103,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 }
 @media (prefers-reduced-transparency:reduce){.askbar{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--hero-bg)}}
 
-/* Roger */
+/* Smarty */
 .finder{background:var(--hero-bg);color:var(--hero-ink)}
 .finder .eyebrow{color:var(--hero-muted)}
 .finder-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:var(--s-7);align-items:start}
@@ -278,7 +278,7 @@ pre.qtext{white-space:pre-wrap;font-family:var(--f-mono);font-size:.75rem;backgr
   <div class="wrap">
     <a class="wordmark" href="#inicio" aria-label="Impactools, inicio"><i aria-hidden="true"></i>IMPACTOOLS</a>
     <nav class="nav" aria-label="Secciones">
-      <a href="#roger">Roger</a>
+      <a href="#smarty">Smarty</a>
       <a href="#catalogo">Catálogo</a>
       <a href="#bridas">Llave por brida</a>
       <a href="#antichispa">Antichispa</a>
@@ -295,9 +295,9 @@ pre.qtext{white-space:pre-wrap;font-family:var(--f-mono);font-size:.75rem;backgr
     <h1><span>Vaca Muerta no para.</span><em>Tus herramientas tampoco.</em></h1>
     <p class="lead">Herramientas de impacto y antichispa fabricadas en Argentina para el pozo, la planta y el ducto. Sin esperar un contenedor.</p>
     <form class="askbar" id="askbar">
-      <label for="askIn" class="sr">Consulta para Roger, el asistente técnico</label>
+      <label for="askIn" class="sr">Consulta para Smarty, el asistente técnico con IA</label>
       <input id="askIn" autocomplete="off" placeholder="¿Qué tuerca tenés que mover?">
-      <button class="btn btn-accent" type="submit">Preguntale a Roger</button>
+      <button class="btn btn-accent" type="submit">Preguntale a Smarty</button>
     </form>
     <nav class="hero-links" aria-label="Accesos rápidos">
       <a href="#catalogo">Ver catálogo</a>
@@ -318,11 +318,11 @@ pre.qtext{white-space:pre-wrap;font-family:var(--f-mono);font-size:.75rem;backgr
   </div>
 </section>
 
-<section class="band finder" id="roger">
+<section class="band finder" id="smarty">
   <div class="wrap finder-grid">
     <div class="finder-copy">
-      <p class="eyebrow">Asistente técnico</p>
-      <h2>Roger encuentra la herramienta por vos</h2>
+      <p class="eyebrow">Asistente técnico con IA</p>
+      <h2>Smarty encuentra la herramienta por vos</h2>
       <p>Decile la medida, la brida o el gas de la zona. Te responde con el código exacto, lo suma a tu cotización y te dice quién te atiende más cerca.</p>
       <div class="shortcuts">
         <a class="shortcut" href="#bridas"><b>Llave por brida</b><span>Clase ASME y diámetro: llave y encastre</span></a>
@@ -332,10 +332,10 @@ pre.qtext{white-space:pre-wrap;font-family:var(--f-mono);font-size:.75rem;backgr
       </div>
     </div>
 
-    <div class="console" aria-label="Roger, asistente técnico">
+    <div class="console" aria-label="Smarty, asistente técnico con IA">
       <div class="console-head">
-        <strong>ROGER</strong>
-        <span class="eyebrow" style="color:var(--hero-muted)">Asistente técnico</span>
+        <strong>SMARTY</strong>
+        <span class="eyebrow" style="color:var(--hero-muted)">Asistente técnico con IA</span>
         <span class="status"><span class="dot" id="advDot"></span><span id="advMode">Conectando…</span></span>
       </div>
       <div class="msgs" id="msgs" aria-live="polite"></div>
@@ -834,7 +834,7 @@ function localAnswer(q){
   const what = p.inch ? toFrac(p.inch)+'"' : p.mm ? p.mm+' mm' : p.kg ? p.kg+' kg' : '';
   return {text:`Encontré ${res.length === 6 ? 'estas opciones' : res.length + (res.length === 1 ? ' opción' : ' opciones')}${what ? ' para '+what : ''}. Precio y plazo se confirman en la cotización.`, items:res};
 }
-const RULES = `Sos Roger, el asistente técnico de la web de Impactools SRL, fabricante argentino (planta en México 643, Avellaneda) de llaves de golpe, bocallaves de alto impacto, herramientas antichispa y mazas para la industria petrolera, plantas, terminales y minería. Hablás en español rioplatense, claro y breve (máximo 110 palabras), como un técnico de ventas que conoce el pozo. Texto plano, sin tablas ni markdown salvo saltos de línea.
+const RULES = `Sos Smarty, el asistente técnico con IA de la web de Impactools SRL, fabricante argentino (planta en México 643, Avellaneda) de llaves de golpe, bocallaves de alto impacto, herramientas antichispa y mazas para la industria petrolera, plantas, terminales y minería. Hablás en español rioplatense, claro y breve (máximo 110 palabras), como un técnico de ventas que conoce el pozo. Texto plano, sin tablas ni markdown salvo saltos de línea.
 Reglas:
 - Antes de nombrar un producto, buscalo con buscar_catalogo. Mencioná siempre el código. Las piezas que encuentres se muestran solas como tarjetas debajo de tu respuesta, no hace falta listarlas todas.
 - Para bridas usá llave_para_brida (ASME B16.5, tuerca pesada 2H) y aclarales que verifiquen con el espárrago instalado.
@@ -906,9 +906,9 @@ async function ask(q){
 $('composer').addEventListener('submit', e => { e.preventDefault(); if (busy && ctl) { ctl.abort(); return; } const v = $('advInput').value; $('advInput').value = ''; ask(v); });
 $('chips').addEventListener('click', e => { const b = e.target.closest('.chip'); if (b) ask(b.textContent); });
 const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
-const toRoger = q => { $('roger').scrollIntoView({behavior:smooth, block:'start'}); if (q) ask(q); };
-document.querySelectorAll('[data-ask]').forEach(b => b.addEventListener('click', () => toRoger(b.dataset.ask)));
-$('askbar').addEventListener('submit', e => { e.preventDefault(); const v = $('askIn').value.trim(); $('askIn').value = ''; toRoger(v); if (!v) setTimeout(() => $('advInput').focus({preventScroll:true}), 400); });
+const toSmarty = q => { $('smarty').scrollIntoView({behavior:smooth, block:'start'}); if (q) ask(q); };
+document.querySelectorAll('[data-ask]').forEach(b => b.addEventListener('click', () => toSmarty(b.dataset.ask)));
+$('askbar').addEventListener('submit', e => { e.preventDefault(); const v = $('askIn').value.trim(); $('askIn').value = ''; toSmarty(v); if (!v) setTimeout(() => $('advInput').focus({preventScroll:true}), 400); });
 
 /* ---------- Hero: Vaca Muerta al atardecer ---------- */
 (function heroScene(){
@@ -1072,7 +1072,7 @@ $('askbar').addEventListener('submit', e => { e.preventDefault(); const v = $('a
 
 /* ---------- Inicio ---------- */
 renderQuote(); renderCat(); renderFlange(); renderDists();
-addMsg('bot', 'Hola, soy Roger. Decime la medida, la brida o el gas de la zona y te digo qué herramienta usar y dónde conseguirla.');
+addMsg('bot', 'Hola, soy Smarty. Decime la medida, la brida o el gas de la zona y te digo qué herramienta usar y dónde conseguirla.');
 const ex = localAnswer('Llave de golpe para brida 6" clase 900');
 addMsg('user', 'Llave de golpe para brida 6" clase 900', null, 'Ejemplo');
 addMsg('bot', ex.text, ex.items);
