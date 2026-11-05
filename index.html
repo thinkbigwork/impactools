@@ -519,8 +519,8 @@ pre.qtext{white-space:pre-wrap;font-family:var(--f-mono);font-size:.75rem;backgr
     <div style="display:grid;gap:var(--s-2)">
       <p class="eyebrow">Pedido para enviar</p>
       <pre class="qtext" id="qText"></pre>
-      <button class="btn btn-accent" id="copyQuote" type="button">Copiar pedido</button>
-      <p class="note">Pegalo en WhatsApp al <span class="mono" style="user-select:all">+54 9 11 3958-4803</span> o por correo a <span class="mono" style="user-select:all">impactools@hotmail.com</span>. <span id="qDist"></span></p>
+      <button class="btn btn-accent" id="sendQuote" type="button">Enviar</button>
+      <p class="note">También podés escribirnos por WhatsApp al <span class="mono" style="user-select:all">+54 9 11 3958-4803</span> o por correo a <span class="mono" style="user-select:all">impactools@hotmail.com</span>. <span id="qDist"></span></p>
     </div>
   </div>
 </aside>
@@ -692,11 +692,7 @@ const openQ = () => { $('drawer').classList.add('open'); $('drawer').setAttribut
 const closeQ = () => { $('drawer').classList.remove('open'); $('drawer').setAttribute('aria-hidden','true'); $('scrim').hidden = true; };
 $('openQuote').addEventListener('click', openQ); $('closeQuote').addEventListener('click', closeQ); $('scrim').addEventListener('click', closeQ);
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeQ(); });
-$('copyQuote').addEventListener('click', () => {
-  const t = quoteText();
-  const sel = () => { const r = document.createRange(); r.selectNodeContents($('qText')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast('Pedido seleccionado: copialo con Ctrl+C'); };
-  try { navigator.clipboard.writeText(t).then(() => toast('Pedido copiado'), sel); } catch(e) { sel(); }
-});
+/* Enviar: pendiente de definir el destino del pedido (correo, WhatsApp o CRM). Por ahora no hace nada. */
 
 /* ---------- Catálogo ---------- */
 const fFam = $('fFam'), fMat = $('fMat'), fDrive = $('fDrive'), fUnit = $('fUnit'), qIn = $('q');
